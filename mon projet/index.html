@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<head>
+  <title>Max's Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="table">Table of Contents</h1>
+  <div class="TOC">
+    <div class="TOC-list">
+     <ol>
+       <li class="TOC-lesson"><a href="#lesson-1">Lesson 1: The Basics of the Web and HTML</a>
+         <ul>
+           <li><a href="#lesson-1-1">How the web works</a></li>
+           <li><a href="#lesson-1-2">What a web page is</a></li>
+           <li><a href="#lesson-1-3">How coding works</a></li>
+           <li><a href="#lesson-1-4">Computers are stupid</a></li>
+         </ul>
+       </li>
+       <li class="TOC-lesson"><a href="#lesson-2">Lesson 2 : Creating Standard Documents with HTML</a>
+         <ul>
+           <li><a href="#lesson-2-1">Tree like structure</a></li>
+           <li><a href="#lesson-2-2">Website Composition</a></li>
+           <li><a href="#lesson-2-3">Usefull tools</a></li>
+         </ul>
+       </li>
+       <li class="TOC-lesson"><a href="#lesson-3">Lesson 3 : Adding CSS Style and HTML Structure</a>
+         <ul>
+           <li><a href="#lesson-3-1">What is CSS and why using it</a></li>
+           <li><a href="#lesson-3-2">How to add CSS style to a webpage</a></li>
+           <li><a href="#lesson-3-3">How does CSS "control" HTML?</a></li>
+           <li><a href="#lesson-3-4">Inheritence</a></li>
+           <li><a href="#lesson-3-5">Box sizing and Positioning</a></li>
+         </ul>
+       </li>
+     </ol>
+    </div>
+    <div><!-- blank div for width matters because intrinsic or max-content didn't pass the css validator --></div>
+  </div>
+  <h1>Important concepts</h1>
+  <div class="lesson">
+    <h2 id="lesson-1">Lesson 1 : The basics of the web and html <a class="backtop" href="#table"><img src="images/top.png" alt="top"></a></h2>       
+    <div class="concept" id="lesson-1-1">   
+     <div class="concept-title">How the web works</div>
+     <div class="concept-description">
+       <p>The <strong>WEB</strong> is a bunch of computers that communicate with each other. When a person goes to a web page like <a href ="http://www.google.com">Google</a>, their computer sends a <em>HTTP Request</em> to a <em>server</em>.<br>
+       <strong>SERVERS</strong> are computers optimized for hosting data and <strong>HTML</strong> or <b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage is the protocol used for communicates between all those elements<br>
+       The server finds the appropriate HTML document and sends it back to the user's computer where a <strong>WEB BROWSER</strong>, a local software on everyone's computer, interprets the page and displays it on the user's screen.<br>
+       <a href="https://www.udacity.com/course/viewer#!/c-ud721/l-3508959201/e-48329854/m-48480496">This video</a> does a good job of explaining.
+       </p>
+     </div>
+    </div>   
+    <div class="concept" id="lesson-1-2">
+     <div class="concept-title">What a web page is</div>
+     <div class="concept-description">  
+       <p>A web page is a text document written in a language called HTML. Web browsers read these documents, and then interpret and display them.<br>
+       HTML documents contain <em>text content</em> which describes "what you see" and <em>markup</em> which describes "how it looks". <a href="https://www.udacity.com/course/viewer#!/c-ud721/l-3508959201/m-48724340"> This video</a> gives a good overview.<br>
+       HTML documents are made of HTML <b>tags</b>, <b>elements</b> and <b>attributes</b>.<br>
+       When writing HTML, we tell browsers the type of each element by using HTML <b>tags</b>. <a href="https://www.udacity.com/course/viewer#!/c-ud721/l-3508959201/m-48723444">This video</a> explains the distinction well. An HTML tag is always contained within angled brackets. Most tags have an opening tag &#60;p&#62; for example and a closing tag, &#60;/p&#62;. Some tags (called "void" tags) do not require a closing tag (like the &#60;br&#62; tag).<br>
+       Attributes are the properties of an HTML element. For example, to set the href attribute of an anchor tag to the Udacity URL, you would write &#60;a href="www.udacity.com"&#62; 
+       </p>
+     </div>
+    </div>    
+    <div class="concept" id="lesson-1-3">
+     <div class="concept-title">How coding works</div>
+     <div class="concept-description"> 
+       <p>Coding happens when programmers write text in a language that a computer can understand. The computer can then follow the instructions the programmer wrote.<br> There are too many details to keep everything in head but search engine are our friends. Coding is a state of mind, knowing how to speak to a computer, with the appropriate language.
+       </p>
+     </div>
+    </div>    
+    <div class="concept" id="lesson-1-4">
+     <div class="concept-title">Computers are stupid</div>
+     <div class="concept-description">
+       <p>Computers aren't smart, they interpret litteraly what the programer says to him, small mistakes can lead to huge consequences
+       </p>
+     </div>
+    </div>    
+  </div>
+  <div class="lesson">
+   <h2 id="lesson-2">Lesson 2 : Creating Standard Documents with HTML <a class="backtop" href="#table"><img src="images/top.png" alt="top"></a></h2>
+   <div class="concept" id="lesson-2-1">   
+     <div class="concept-title">Tree like structure</div>
+     <div class="concept-description">
+       <p>Everything is boxes, containing smaller boxes, containing even smaller boxes themselves. The smallest boxes are just filled with a single elements like the text you want to display, an image, a video, etc... but they are boxes anyway with theyre own properties like margin, width<br>
+       With this modeling style, if you want to move two related elements, move the boxe wich contains those two instead of moving them speratly and realign them later
+       </p>
+       <p>HTML allows us do to that beacause of his imbricated structure and inline or blocks tags. A div is a block, you can a multiples paragraphs in a div, some text in bold or italic in this paragraph etc<br>
+       Your structure looks like :</p>
+       <div class="exemple">
+         <div class="exemple-code">
+           &#60;div&#62; ...<br>
+           <span class="i1">&#60;div&#62; ...</span><br>
+           <span class="i2">&#60;p&#62;....&#60;b&#62;...&#60;/b&#62;....&#60;/p&#62;</span><br>
+           <span class="i2">&#60;p&#62;...&#60;b&#62;...&#60;/b&#62;...&#60;em&#62;...&#60;/em&#62;...&#60;/p&#62;</span><br>
+           <span class="i1">&#60;/div&#62;</span><br>
+           <span class="i1">&#60;div&#62;</span><br>
+           <span class="i1">&#60;/div&#62;</span><br>
+           ...<br>
+           &#60;/div&#62;
+         </div>
+         <div></div>
+       </div>
+       <p>It's the DOM; Document Object Model - a cross-platform and language-independent convention for representing and interacting with objects in HTML (and other markup languages). The nodes of every document are organized in a tree structure, called the DOM tree.</p>
+       <p>Tree like structured code with a good indentation are easier to read and reaching a particular element is faster just following the nodes  
+       </p>
+     </div>
+   </div>     
+   <div class="concept" id="lesson-2-2">
+     <div class="concept-title">Website Composition</div>
+     <div class="concept-description">
+       <dl>
+         <dt>HTML :</dt><dd>HyperText Markup Language - the standard markup language used to create web pages.</dd>
+         <dt>CSS :</dt><dd>Cascading Style Sheets - style sheet language used for describing the look and formatting of a document written in a markup language.</dd>
+         <dt>Javascript :</dt><dd>Workable features will see later</dd>
+       </dl>
+     </div>
+   </div>  
+   <div class="concept" id="lesson-2-3">   
+     <div class="concept-title">Usefull tools</div>
+     <div class="concept-description">
+       <p>Developer Tools (in the Browser) helps you to inspect existing webpages highlighting selected elements, show you whose in block with theyre "invisible box", who is inline, etc. You can test some modification and have an immediate feedback</p> 
+       <p>Writing web pages with notepad is a little hardcore... so we can use :</p>
+       <dl>
+         <dt>Scratchpad :</dt><dd>easy to use for beginners and immediate feedback</dd>
+         <dt>Codepen :</dt><dd>fewer beginners but has friendly features.</dd>
+         <dt>Sublime :</dt><dd>more challenging to start but more powerfull.</dd>
+       </dl>        
+       <p>Once your code seems to be correct, be sure of that with : <a href="http://validator.w3.org/#validate_by_input">Markup Validation Service</a> and <a href="https://jigsaw.w3.org/css-validator/#validate_by_input">CSS Validation Service </a> 
+       </p>
+     </div>
+   </div>  
+  </div>
+  <div class ="lesson">
+   <h2 id="lesson-3">Lesson 3 : Adding CSS Style and HTML Structure <a class="backtop" href="#table"><img src="images/top.png" alt="top"></a></h2>
+   <div class="concept" id="lesson-3-1">     
+     <div class="concept-title">What is CSS and why using it</div>
+     <div class="concept-description">
+       <p> CSS is code written to control the "style" of HTML elements.<br>
+       You can also think about CSS as a search and replace tool: you identify a class or a tag of the element you want to find (or match, in CSS terminology), and then what you want to do with it, or what property values to replace with different ones.<br>
+       The code will be lighter using this, avoiding a lot of repetitions so reducing potential mistakes.<br>
+       The page will also be more consistent with all elements of the same class with the same look</p>
+     </div>
+   </div>
+   <div class="concept" id="lesson-3-2">
+     <div class="concept-title">How to add CSS style to a webpage</div>
+     <div class="concept-description">
+       <p>Possible but bad idea:  Write youre style inline with your HTML</p>
+       <div class="exemple">
+         <div class="exemple-code">
+           &#60;body&#62;<br>
+           <span class="i1">&#60;div style=&#34;background-color: red; color: white&#34;&#62;</span><br>
+           <span class="i2">This div will have a red background and white text.</span><br>
+           <span class="i1">&#60;/div&#62;</span><br>...
+         </div>
+         <div class="exemple-result" style="background-color: red; color: white">this div will have a red background</div>
+       </div>
+       <p>This is a bad idea because it leads to lots of repeated code and lots of added work. So avoid this method as much as possible.</p><br>
+       <p>Acceptable for very small projects : Write CSS in the &#60;head&#62; section of your HTML :</p>
+       <div class="exemple">
+         <div class="exemple-code">&#60;head&#62;<br>
+           <span class="i1">&#60;style&#62;</span><br>
+           <span class="i2">div {</span><br> 
+           <span class="i2">}</span><br>
+           <span class="i1">&#60;/style&#62;</span><br>
+           &#60;/head&#62;
+         </div>
+         <div></div>
+       </div>
+       <p>Mostly used method : Link your HTML to a separate CSS file by writing the link address in your &#60;head&#62; section of your HTML.</p>
+       <div class="exemple">
+         <div class="exemple-code">&#060;head&#62;<br>
+           <span class="i1">&#60;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;main.css&#34;&#62;</span><br>
+           &#60;/head&#62;
+         </div>
+         <div></div>
+       </div>
+       <p>The link rel=&#34;stylesheet&#34; portion links the css document to the html as long as it is located in the same folder.</p>
+     </div>
+   </div>   
+   <div class="concept" id="lesson-3-3">  
+     <div class="concept-title">How does CSS "control" HTML?</div>
+     <div class="concept-description">
+       <p>If you want to write CSS that makes all h1 elements have a black background and white text, you would write:</p>
+       <div class="exemple">
+         <div class="exemple-code">h1 {<br>
+           <span class="i1">background-color : black;</span><br>
+           <span class="i1">color: white;</span><br>
+           }
+         </div>
+         <div></div>
+       </div>
+       <p>In this example, the h1 is a selector. It says to the browser &#34;I want you to apply the rules I'm about to tell you to every h1 element.&#34;<br>
+       After the h1 there is a left curly brace { and at the bottom there is a matching right curly brace }. Everything between these curly braces will be interpreted as a &#34;rule&#34; that should be applied to every h1 element.<br>
+       The line of code that says background-color : black; is a <b>declaration</b>. background-color is a <b>property</b> and black is the <b>value</b> of that property
+       </p>
+       <p>In the example above, we set the background-color of every h1 to black. If we only want to add style to certain h1s, we can use class selectors.
+       </p>
+       <div class="exemple">
+         <div class="exemple-code">
+           <span class="comment">html :</span><br>
+           <p>&#60;div class=&#34;stop&#34;&#62;&#60;/div&#62;<br>
+           &#60;div class=&#34;slow&#34;&#62;&#60;/div&#62;<br>
+           &#60;div class=&#34;go&#34;&#62;&#60;/div&#62;</p>
+           <span class="comment">with css :</span><br><br>
+           <span class="i1">div {</span><br>
+           <span class="i2">height : 50px;</span><br>
+           <span class="i2">width : 50px;</span><br>
+           <span class="i2">border-radius: 25px;</span><br>
+           <span class="i1">}</span><br>
+           <span class="i1">.stop {</span><br>
+           <span class="i2">background-color: red;</span><br>
+           <span class="i1">}</span><br>
+           <span class="i1">.slow {</span><br>
+           <span class="i2">background-color: yellow;</span><br>
+           <span class="i1">}</span><br>
+           <span class="i1">.go {</span><br>
+           <span class="i2">background-color: green;</span><br>
+           <span class="i1">}</span>
+         </div>
+         <div class="comment">gives :</div>
+         <div class="exemple-result">
+           <div style="height : 50px; width : 50px; border-radius: 25px; background-color: red;"></div>
+           <div style="height : 50px; width : 50px; border-radius: 25px; background-color: yellow;"></div>
+           <div style="height : 50px; width : 50px; border-radius: 25px; background-color: green;"></div>
+         </div>
+       </div>
+       <p>We can apply rules to all divs or just certain divs by using the appropriate selector.</p>
+     </div>
+   </div> 
+   <div class="concept" id="lesson-3-4">
+     <div class="concept-title">Inheritence</div>
+     <div class="concept-description">
+       <p>Inheritance prevents certain properties from being declared over and over again in a style sheet, allowing the software developers to write less CSS. It enhances faster-loading of web pages by users and enables the clients to save money on bandwidth and development costs.<br>
+       Descendent elements inherit text-related properties (color, font, ...) but not box-related properties (background, border,...).<br>
+       Read more on <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Inheritance">Wikipedia</a>  
+       </p>
+     </div>
+   </div>
+   <div class="concept" id="lesson-3-5">
+     <div class="concept-title">Box sizing and Positioning</div>
+     <div class="concept-description">
+       <p> HTML elements are boxes and each box has <a href="http://assignments.udacity-extras.appspot.com/courses/html-css/samples/box-model.html">4 components</a><br> 
+       Because there are so many components to each box, it can often be hard to get the size of a box just right.<br>
+       There are two techniques you can use to help deal with sizing issues.<br>
+       Set sizes in terms of percentages rather than pixels.<br>
+       Set the box-sizing attribute to border-box for every element. Different browsers work slightly differently. Sometimes this causes different browsers to display the same code differently so we need to add some lines for compatibility :</p>
+       <div class="exemple">
+         <div class="exemple-code">* {<br>
+           <span class="i1">-webbox-sizing: border-box;</span><br>
+           <span class="i1">-moz-box-sizing: border-box;</span><br>
+           <span class="i1">-ms-box-sizing: border-box;</span><br>
+           <span class="i1">box-sizing: border-box;</span><br>
+           }
+         </div>
+         <div></div>
+       </div>
+       <p>Divs are block elements (as opposed to inline), so by default they take up the entire width of a page.<br>
+       Adding the rule display: flex; to the appropriate CSS will override this behavior and let divs appear next to each other.</p>
+     </div>
+   </div>
+  </div>
+</body>
+</html>
